@@ -32,9 +32,7 @@ public class Client {
 		c2.start();
 //		c3.start();
 
-		while (true) {
 
-		}
 
 	}
 }
