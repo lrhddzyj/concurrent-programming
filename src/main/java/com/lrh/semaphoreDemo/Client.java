@@ -1,6 +1,7 @@
 package com.lrh.semaphoreDemo;
 
 /**
+ * 池化demo
  * @description:
  * @author: lrh
  * @date: 2020/5/19 19:27
