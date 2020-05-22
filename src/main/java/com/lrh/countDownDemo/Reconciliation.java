@@ -131,8 +131,8 @@ public class Reconciliation {
 	}
 
 	private List<DiffOrder> compareWithQueue() {
-		Object goodOrder = goodOrder.remove(0);
-		Object expressOrder = expressOrder.remove(0);
+//		Object goodOrder = goodOrder.remove(0);
+//		Object expressOrder = expressOrder.remove(0);
 		//省略 。。。 比较 返回
 		return Collections.EMPTY_LIST;
 	}
