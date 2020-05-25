@@ -13,6 +13,15 @@
 <!--        <java.target>1.8</java.target>-->
 <!--    </properties>-->
 
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
