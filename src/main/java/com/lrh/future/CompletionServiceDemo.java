@@ -3,7 +3,7 @@ package com.lrh.future;
 import java.util.concurrent.*;
 
 /**
- * @description:
+ * @description: 批量异步处理任务
  * @author: lrh
  * @date: 2020/5/25 11:47
  */
