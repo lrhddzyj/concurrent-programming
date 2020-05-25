@@ -74,7 +74,7 @@ public class Reconciliation {
 	/**
 	 * 线程池 + countDown 处理
 	 */
-	BlockingQueue blockingQueue = new LinkedBlockingDeque();
+	BlockingQueue blockingQueue = new LinkedBlockingDeque(10);
 	ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 2, 3_000, TimeUnit.SECONDS, blockingQueue);
 
 	public void parallelWithCountDownLatch() throws InterruptedException {
