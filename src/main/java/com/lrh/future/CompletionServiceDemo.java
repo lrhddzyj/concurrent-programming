@@ -1,5 +1,7 @@
 package com.lrh.future;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
 
 /**
@@ -15,29 +17,58 @@ public class CompletionServiceDemo {
 
 		CompletionService<String> completionService = new ExecutorCompletionService<>(threadPoolExecutor);
 
+		List<Future<String>> futureList = new ArrayList();
 
-		completionService.submit(() -> {
-			 sleep(1);
+		futureList.add(completionService.submit(() -> {
+			 sleep(10);
+			System.out.println("任务[1]在执行");
 			return "任务[1]完成";
-		});
+		}));
 
-		completionService.submit(() -> {
-			sleep(6);
+		futureList.add(completionService.submit(() -> {
+			sleep(30);
+			System.out.println("任务[1-1]在执行");
+			return "任务[1-1]完成";
+		}));
+
+		futureList.add(completionService.submit(() -> {
+			sleep(30);
+			System.out.println("任务[1-2]在执行");
+			return "任务[1-2]完成";
+		}));
+
+		futureList.add(completionService.submit(() -> {
+			sleep(60);
+			System.out.println("任务[2]在执行");
 			return "任务[2]完成";
-		});
+		}));
 
-		completionService.submit(() -> {
-			sleep(2);
+
+		futureList.add(completionService.submit(() -> {
+			sleep(20);
+			System.out.println("任务[3]在执行");
 			return "任务[3]完成";
-		});
+		}));
 
-		for (int i = 0; i < 3; i++) {
-			String rt = completionService.take().get();
-			threadPoolExecutor.execute(() ->{
-				System.out.println("处理返回数据：" + rt);
-				sleep(1);
-			});
+		for (Future<String> stringFuture : futureList) {
+			System.out.println(stringFuture.get());
+
+			System.out.println("========================");
 		}
+
+//		for (int i = 0; i < 7 ; i++) {
+//			System.out.println(completionService.poll());
+//		}
+//		System.out.println("abc");
+//		threadPoolExecutor.shutdown();
+
+//		for (int i = 0; i < 100; i++) {
+//			String rt = completionService.take().get();
+//			threadPoolExecutor.execute(() ->{
+//				System.out.println("处理返回数据：" + rt);
+//				sleep(1);
+//			});
+//		}
 
 
 	}
