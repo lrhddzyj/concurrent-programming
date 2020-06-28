@@ -54,14 +54,15 @@ public class Point {
 
 			try {
 				System.out.println("再次读入数据到局部变量");
+				//4.使用局部变量处理业务
+				System.out.println("使用局部变量处理业务");
 			} finally {
-				//4.释放悲观锁
+				//5.释放悲观锁
 				stampedLock.unlockRead(stamp);
 			}
 		}
 
-		//5.使用局部变量处理业务
-		System.out.println("使用局部变量处理业务");
+
 	}
 
 
