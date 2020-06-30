@@ -50,15 +50,15 @@ public class CompletionServiceDemo {
 			return "任务[3]完成";
 		}));
 
-		for (Future<String> stringFuture : futureList) {
-			System.out.println(stringFuture.get());
-
-			System.out.println("========================");
-		}
-
-//		for (int i = 0; i < 7 ; i++) {
-//			System.out.println(completionService.poll());
+//		for (Future<String> stringFuture : futureList) {
+//			System.out.println(stringFuture.get());
+//
+//			System.out.println("========================");
 //		}
+
+		for (int i = 0; i < 5 ; i++) {
+			System.out.println(completionService.take().get());
+		}
 //		System.out.println("abc");
 //		threadPoolExecutor.shutdown();
 
