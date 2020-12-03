@@ -20,33 +20,33 @@ public class CompletionServiceDemo {
 		List<Future<String>> futureList = new ArrayList();
 
 		futureList.add(completionService.submit(() -> {
-			 sleep(10);
 			System.out.println("任务[1]在执行");
+			sleep(10);
 			return "任务[1]完成";
 		}));
 
 		futureList.add(completionService.submit(() -> {
-			sleep(30);
 			System.out.println("任务[1-1]在执行");
+			sleep(30);
 			return "任务[1-1]完成";
 		}));
 
 		futureList.add(completionService.submit(() -> {
-			sleep(30);
 			System.out.println("任务[1-2]在执行");
+			sleep(30);
 			return "任务[1-2]完成";
 		}));
 
 		futureList.add(completionService.submit(() -> {
-			sleep(60);
 			System.out.println("任务[2]在执行");
+			sleep(60);
 			return "任务[2]完成";
 		}));
 
 
 		futureList.add(completionService.submit(() -> {
-			sleep(20);
 			System.out.println("任务[3]在执行");
+			sleep(20);
 			return "任务[3]完成";
 		}));
 
